@@ -1,0 +1,51 @@
+/*
+ * c : color
+ * fs: font-size
+ * sp: space
+ * cb: background color
+ * fc: font color
+*/
+
+//主要颜色
+$cMain  : #339999; //主色
+$cFirst : #3399ff; //第一辅色，侧边栏选中颜色
+$cSecond: #16599f; //第二辅色，header背景色
+
+$gray   : #c6cfda;
+$white  : #fff;
+
+//各种提示颜色
+$cNormal    : $cMain;
+$cWarning   : #ff9900;
+$cSuccess   : #090;
+$cError     : #ff0000;
+$na         : #bbb;     //not avaliable
+
+//字体颜色
+$fcMain      : #333;
+$fcGray      : #666;     //灰色字体
+$fcLiaghtGray: #999;     //灰色字体
+
+//各种背景色
+$cbMain: #eef1f5; //内容区域背景色
+$cbBody: $cMain;  //body背景色
+
+//表格背景色
+$cbTableActive: #E1E5EC;
+
+//主要字体大小
+$fsSmall: 8px; //小号
+$fsMain : 14px; //主字体
+$fsLogo : 20px; 
+$fsLarge: 30px;
+$fsH1   : 24px;
+$fsH2   : 22px;
+$fsH3   : 20px;
+$fsH4   : 18px;
+$fsH5   : 16px;
+
+//主要间隔
+$spSmall : 5px;
+$spNormal: 10px;
+$spMiddle: 15px;
+$spLarge : 20px;

@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <!-- 第三方类库 -->
+    <!-- 第三方库 -->
     <link rel="stylesheet" href="static/css/bootstrap.min.css">
     <link rel="stylesheet" href="static/css/font-awesome.min.css">
-    <link rel="stylesheet" href="static/css/simple-line-icons.min.css">
-    <!-- 第三方类库 -->
-
-    <link rel="stylesheet" href="static/css/common.css">
+    <!-- 第三方库 -->
+    <link rel="stylesheet" href="static/css/const.css">
+    <link rel="stylesheet" href="static/css/modal.css">
     <link rel="stylesheet" href="static/css/index.css">
 </head>
 <body>
@@ -41,11 +40,39 @@
     
     <script>
         var pop = new Pop( $( '#confirmModal' ) );
-        pop.error("确定？");
-        pop.on( '.ok', 'click', function() {
-            pop.hide();
-            alert("ok!");
-        })
+
+        // pop.warning(`确定执行操作吗？`);
+        // pop.on( '.ok', 'click', function() {
+        //     pop.hide();
+        //     alert("ok!");
+        // });
+        
+        //自定义弹框内容为表单
+        // pop.normal(`
+        //     <form action="javascript:;" method="get">
+        //         <p>First name: <input type="text" name="fname" /></p>
+        //         <p>Last name: <input type="text" name="lname" /></p>
+        //     </form>
+        // `);
+        // pop.on( '.ok', 'click', function() {
+        //     pop.hide();
+        //     alert("ok!");
+        // });
+        
+        //自定义弹框内容为选项菜单
+        // pop.normal(`
+        //     <select>
+        //         <option value ="volvo">Volvo</option>
+        //         <option value ="saab">Saab</option>
+        //         <option value="opel">Opel</option>
+        //         <option value="audi">Audi</option>
+        //     </select>
+        // `);
+        // pop.on( '.ok', 'click', function() {
+        //     pop.hide();
+        //     alert("ok!");
+        // });
+
     </script>
 </body>
 </html>

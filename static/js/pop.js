@@ -7,27 +7,26 @@
  * @param {jquery} $modal
 */
 
-// 所有模块都通过 define 来定义
 (function() {
 	function Pop( $modal ) {
 		if( !$modal || !$modal.jquery ) {
 			throw new Error( 'please ensure input an effective parameter!' );
 		}
-		this.modal = $modal;
-		this.ok    = this.modal.find( '.pop-footer .ok' );
-		this.cancel= this.modal.find( '.pop-footer .cancel' );
-		this._init();
-		this.isShow = false;
-		this.hiddenCb = null;
+		this.modal = $modal; //弹框jquerydom
+		this.ok    = this.modal.find( '.pop-footer .ok' ); //确定按钮
+		this.cancel= this.modal.find( '.pop-footer .cancel' ); //取消按钮
+		this._init(); //初始化
+		this.isShow = false; //弹出框是否显示
+		this.hiddenCb = null; //弹框隐藏后的回调函数
 	}
 
 	Pop.prototype._init = function( msg ) {
 		this.modal.addClass( 'pop' );
-		this.modal.find( '.modal-header' ).addClass( 'pop-header' );
-		this.modal.find( '.modal-footer' ).addClass( 'pop-footer' );
+		this.modal.find( '.modal-header' ).addClass( 'pop-header' ); //为弹框的header添加pop-header类
+		this.modal.find( '.modal-footer' ).addClass( 'pop-footer' ); //为弹框的footer添加pop-footer类
 		this.modal.find( '.modal-body' ).addClass( 'pop-body' )
 				  .html( '<i class=""></i>' +
-						 '<p class="pop-text">' + msg + '</p>' );
+						 '<p class="pop-text">' + msg + '</p>' ); //在弹框的中间内容区域添加i标签和p标签
 
 		//窗口隐藏时自动注销确定按钮绑定的事件
 		this.modal.on( 'hidden.bs.modal', function () {
@@ -42,7 +41,9 @@
 	 		}.bind(this), 0);
 		}.bind( this ));
 	}
-
+	/**
+	 * 
+	**/
 	Pop.prototype.sure = function( msg ) {
 		this._show( 'sure', msg );
 	}
@@ -75,7 +76,7 @@
 		var that = this,
 			$ok = this.modal.find( '.pop-footer .ok' ),
 			$cancel = this.modal.find( '.pop-footer .cancel' );
-
+			
 		this.isShow = true;
 		$ok.show();
 		$cancel.show();
@@ -113,6 +114,10 @@
 
 				this.modal.find( '.pop-body i' ).removeClass().addClass( 'fa fa-times-circle' );
 				this.modal.find( '.modal-title' ).text( '错误' );
+				break;
+			case 'folder':
+				this.modal.find( '.pop-body i' ).removeClass().addClass( 'fa fa-info-circle' );
+				this.modal.find( '.modal-title' ).text( '新建文件夹' );
 				break;
 			default:
 				break;
